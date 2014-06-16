@@ -43,6 +43,27 @@ location.href="Datos.php";
 window.onload=function(){oculta('F2');
 }
 </script>
+<script language='javascript'>
+function valida(dato) {
+tam=dato.length;
+arroba=dato.indexOf('@');
+punto=dato.indexOf('.');
+palabra1=dato.substring(0,arroba);
+palabra2=dato.substring(arroba+1,punto);
+palabra3=dato.substring(punto+1,tam);
+if(palabra1=="" || palabra2=="" || palabra3==""){alert('el formato es incorrecto');}
+if(arroba!=-1 && punto!=-1){
+if(arroba<punto){
+}else{alert('el formato es incorrecto');
+}
+}else{alert('el formato es incorrecto');
+}
+dif=punto-arroba;
+if(dif<=4){alert('el formato es incorrecto');}
+  
+}
+</script>
+
 <style>
 @import 'estilos.css'screen;
 </style>
@@ -192,7 +213,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <br>
 Nombre <input type="text"class="nombre">
 <br>
-Correo <input type="text" name="correo">
+Correo <input type="text" name="correo"  value=" " onChange='valida(this.value)'>
 <br>
 Direccion <input type="text" name="direccion">		
 </div>
