@@ -32,15 +32,14 @@ F1.style.display='none';
 
 
 function recarga(){
-/*Ruta absoluta, nos llevaría a una web externa*/
+/*Ruta absoluta, nos llevarÃ­a a una web externa*/
 location.href = "Datos.php";
-/*En cambio esta nos llevaría a una dentro de nuestro dominio*/
+/*En cambio esta nos llevarÃ­a a una dentro de nuestro dominio*/
 location.href="Datos.php";
 }
-
-
-
-window.onload=function(){oculta('F2');
+window.onload=function(){
+oculta('F2');
+val_correo();
 }
 </script>
 <script language='javascript'>
@@ -63,6 +62,7 @@ if(dif<=4){alert('el formato es incorrecto');}
   
 }
 </script>
+
 
 <style>
 @import 'estilos.css'screen;
@@ -124,14 +124,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <br>
 &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 <div class="imagen"> 
-<img style="width: 215px; height: 215px;"alt="." src="producto4.jpeg">
+<img style="width: 215px; height: 215px;"alt="." src="imagen/producto4.jpeg">
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img style="width: 230px; height: 265px;" alt="." src="producto2.jpeg">
+<img style="width: 230px; height: 265px;" alt="." src="imagen/producto2.jpeg">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img style="width: 155px; height: 155px;" alt="." src="producto3.jpeg">
+<img style="width: 155px; height: 155px;" alt="." src="imagen/producto3.jpeg">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img style="width: 242px; height: 147px;" alt="." src="producto1.jpg">
+<img style="width: 242px; height: 147px;" alt="." src="imagen/producto1.jpg">
 <br>
 <br>
 <br>
@@ -211,11 +211,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <input type="text" size="2" class="card-expiry-month input-mini">
 <label>&nbsp | &nbsp </label><input type="text" size="4" class="card-expiry-year input-mini">
 <br>
-Nombre <input type="text"class="nombre">
+Nombre <input type="text"class="nombre" id="nombre">
 <br>
-Correo <input type="text" name="correo"  value=" " onChange='valida(this.value)'>
+Correo <input type="text" name="correo" id="correo" value=" " onChange='valida(this.value)'>
 <br>
-Direccion <input type="text" name="direccion">		
+Direccion <input type="text" name="direccion" id="direccion">		
 </div>
 <br>		
 <button type="submit" class="btn" id="submitBtn">Enviar datos</button>
